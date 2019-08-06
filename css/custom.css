@@ -127,3 +127,6 @@
                     float: left;
                     padding: 5px;
                 }
+    .post + .post {
+        margin-top: 20px;
+    }
