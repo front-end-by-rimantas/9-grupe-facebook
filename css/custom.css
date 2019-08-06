@@ -1,0 +1,25 @@
+/* all other styles, style updates, etc */
+
+.bg-main-color {
+    background-color: var(--main-color);
+    color: var(--main-color-anti);
+}
+.bg-secondary-color {
+    background-color: var(--secondary-color);
+    color: var(--secondary-color-anti);
+}
+.bg-main-color-light {
+    background-color: var(--main-color-light);
+    color: var(--main-color-light-anti);
+}
+.bg-third-color {
+    background-color: var(--third-color);
+    color: var(--third-color-anti);
+}
+
+.main-color {
+    color: var(--main-color);
+}
+.secondary-color {
+    color: var(--secondary-color);
+}
