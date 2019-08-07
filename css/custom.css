@@ -64,6 +64,23 @@
         width: 100%;
         padding: 10px;
     }
+        .post > .content.red {
+            display: flex;
+            align-items: center;
+            background-color: red;
+            color: #FFF;
+            height: 240px;
+            padding: 0 100px;
+            text-align: center;
+        }
+        .post > .content > p {
+            display: inline-block;
+            width: 100%;
+        }
+            .post > .content > p.big-text {
+                font-size: 40px;
+                line-height: 50px;
+            }
         .post > .content > .gallery {
             display: inline-block;
             width: calc(100% + 20px);

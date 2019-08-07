@@ -74,7 +74,9 @@ function generateContent( data ) {
         images = '',
         gallery = 0,
         galleryClass = '',
-        more = '';
+        more = '',
+        bigText = '',
+        background = '';
 
     if ( Array.isArray(data.photos) &&
          data.photos.length > 0 ) {
@@ -98,8 +100,19 @@ function generateContent( data ) {
         images += more;
     }
 
-    HTML = `<div class="content">
-                ${ typeof(data.text) === 'string' ? `<p>${data.text}</p>` : '' }
+    if ( typeof(data.text) === 'string' &&
+         data.text.length < 40 &&
+         gallery === 0 ) {
+        bigText = 'big-text';
+    }
+
+    if ( typeof(data.background) === 'string' &&
+         data.background.length > 0 ) {
+        background = data.background;
+    }
+
+    HTML = `<div class="content ${background}">
+                ${ typeof(data.text) === 'string' ? `<p class="${bigText}">${data.text}</p>` : '' }
                 ${ images === '' ? '' : `<div class="gallery ${galleryClass}">${images}</div>` }
             </div>`;
 
