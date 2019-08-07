@@ -11,7 +11,7 @@ function generatePosts( data ) {
                         <img src="./img/users/${post.author.photo}" alt="User photo">
                         <div class="texts">
                             <div class="title">${post.author.name}</div>
-                            <div class="time">${post.time} ago</div>
+                            <div class="time">${formatTime(post.time)}</div>
                         </div>
                         <i class="fa fa-ellipsis-h"></i>
                     </header>
@@ -117,4 +117,52 @@ function generateContent( data ) {
             </div>`;
 
     return HTML;
+}
+
+function formatTime( time ) {
+    const sec = Math.round( (Date.now() - time) / 1000 );
+    
+    // Just now (0..4)
+    if ( sec < 5 ) {
+        return 'Just now';
+    }
+
+    // 5..59s ago
+    if ( sec >= 5 && sec < 60 ) {
+        return sec + 's ago'
+    }
+
+    // 1..59min ago
+    const min = Math.floor( sec / 60 );
+    if ( min >= 1 && min < 60 ) {
+        return min + 'min ago';
+    }
+
+    // 1..23h ago
+    const hrs = Math.floor( min / 60 );
+    if ( hrs >= 1 && hrs < 24 ) {
+        return hrs + 'h ago';
+    }
+
+    // 1..6d ago
+    const d = Math.floor( hrs / 24 );
+    if ( d >= 1 && d < 7 ) {
+        return d + 'd ago';
+    }
+
+    // 1..4w ago
+    const w = Math.floor( d / 7 );
+    if ( w >= 1 && w < 4 ) {
+        return w + 'w ago';
+    }
+    
+    // 1..11 months ago
+    const m = Math.floor( d / 30.4 );
+    if ( m >= 1 && m < 12 ) {
+        return m + ' months ago';
+    }
+
+    // 1.. years ago
+    const y = Math.floor( d / 365.25 );
+    return y + ' years ago';
 }

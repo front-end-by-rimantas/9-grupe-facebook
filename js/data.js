@@ -24,7 +24,7 @@ const posts = [
             photo: 'person.jpg',
             name: 'John Doe'
         },
-        time: 1540030365658,
+        time: 1565165719006,
         content: {
             text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit'
         }
@@ -35,7 +35,7 @@ const posts = [
             photo: 'person.jpg',
             name: 'Taylor Swift'
         },
-        time: 1540030365658,
+        time: 1565164710988,
         content: {
             text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores exercitationem ipsa magni laudantium culpa fugiat optio aperiam corporis ipsum? Minus, optio sapiente dolore iste explicabo fugiat a maxime rerum. Accusamus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores exercitationem ipsa magni laudantium culpa fugiat optio aperiam corporis ipsum? Minus, optio sapiente dolore iste explicabo fugiat a maxime rerum. Accusamus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores exercitationem ipsa magni laudantium culpa fugiat optio aperiam corporis ipsum? Minus, optio sapiente dolore iste explicabo fugiat a maxime rerum. Accusamus?'
         },
@@ -49,7 +49,7 @@ const posts = [
             photo: 'person.jpg',
             name: 'Name Surname'
         },
-        time: 1540030365658,
+        time: 1565164704988,
         content: {
             text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit',
             photos: ['car-racing.png']
@@ -65,7 +65,7 @@ const posts = [
             photo: 'person.jpg',
             name: 'Name Surname'
         },
-        time: 1540030365658,
+        time: 1565160714988,
         content: {
             text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit',
             photos: ['portfolio.png', 'sign-up.png']
