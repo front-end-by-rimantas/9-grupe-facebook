@@ -6,7 +6,7 @@ function generatePosts( data ) {
 
     // generuojame HTML: ciklas per duomenis -> HTML
     data.forEach( post => {
-        HTML += `<div class="post">
+        HTML += `<div class="post" data-id="${post.id}">
                     <header>
                         <img src="./img/users/${post.author.photo}" alt="User photo">
                         <div class="texts">
@@ -38,8 +38,24 @@ function generatePosts( data ) {
     target.insertAdjacentHTML('beforeend', HTML);
 
     // sudedame ant nauju post'u event listener
-    //....
+    target.querySelectorAll('.more').forEach( item => {
+        item.addEventListener('click', expandText);
+    });
 
+    return;
+}
+
+function expandText( event ) {
+    const postID = parseInt( event.path[3].dataset.id );
+    
+    for ( let i=0; i<posts.length; i++ ) {
+        if( posts[i].id === postID ) {
+            document.querySelector(`.post[data-id="${postID}"] .content > p`)
+                    .textContent = posts[i].content.text;
+            break;
+        }
+    }
+    
     return;
 }
 
@@ -112,11 +128,33 @@ function generateContent( data ) {
     }
 
     HTML = `<div class="content ${background}">
-                ${ typeof(data.text) === 'string' ? `<p class="${bigText}">${data.text}</p>` : '' }
+                ${ typeof(data.text) === 'string' ? `<p class="${bigText}">${readMore(data.text)}</p>` : '' }
                 ${ images === '' ? '' : `<div class="gallery ${galleryClass}">${images}</div>` }
             </div>`;
 
     return HTML;
+}
+
+function readMore( text ) {
+    const maxSymbols = 200;
+    const startMore = 300;
+    let t = '';
+
+    if ( text.length > startMore ) {
+        t = text.substr(0, maxSymbols);
+
+        // triname teksta is galo iki artimiausio tarpo, kartu panaikinant ir tarpa
+        while ( t[t.length - 1] !== ' ' ) {
+            t = t.substr(0, t.length-1);
+        }
+        t = t.substr(0, t.length-1);
+
+        t += '... <span class="more">See more</span>';
+    } else {
+        return text;
+    }
+
+    return t;
 }
 
 function formatTime( time ) {

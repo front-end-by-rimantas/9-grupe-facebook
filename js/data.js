@@ -2,6 +2,7 @@
 
 const posts = [
     // {
+    //     id: 1,
     //     author: {
     //         id: 65131,
     //         photo: 'person.jpg',
@@ -19,6 +20,7 @@ const posts = [
     //     }
     // },
     {
+        id: 2,
         author: {
             id: 65131,
             photo: 'person.jpg',
@@ -30,6 +32,7 @@ const posts = [
         }
     },
     {
+        id: 3,
         author: {
             id: 65131,
             photo: 'person.jpg',
@@ -44,6 +47,22 @@ const posts = [
         }
     },
     {
+        id: 4,
+        author: {
+            id: 65131,
+            photo: 'person.jpg',
+            name: 'Taylor Swift'
+        },
+        time: 1565164710988,
+        content: {
+            text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores exercitationem ipsa magni laudantium culpa fugiat optio aperiam corporis ipsum? Minus, optio sapiente dolore iste explicabo fugiat a maxime rerum.'
+        },
+        interactions: {
+            liked_person_ids: [65131, 584651]
+        }
+    },
+    {
+        id: 5,
         author: {
             id: 65131,
             photo: 'person.jpg',
@@ -60,6 +79,7 @@ const posts = [
         }
     },
     {
+        id: 6,
         author: {
             id: 65131,
             photo: 'person.jpg',
@@ -76,6 +96,7 @@ const posts = [
         }
     },
     {
+        id: 7,
         author: {
             id: 65131,
             photo: 'person.jpg',
@@ -91,6 +112,7 @@ const posts = [
         }
     },
     {
+        id: 8,
         author: {
             id: 65131,
             photo: 'person.jpg',
@@ -106,6 +128,7 @@ const posts = [
         }
     },
     {
+        id: 9,
         author: {
             id: 65131,
             photo: 'person.jpg',
@@ -121,6 +144,7 @@ const posts = [
         }
     },
     {
+        id: 10,
         author: {
             id: 65131,
             photo: 'person.jpg',
@@ -132,6 +156,7 @@ const posts = [
         }
     },
     {
+        id: 11,
         author: {
             id: 65131,
             photo: 'person.jpg',
