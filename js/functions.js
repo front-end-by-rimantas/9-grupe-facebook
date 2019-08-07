@@ -70,11 +70,37 @@ function generateInteractions( data ) {
 }
 
 function generateContent( data ) {
-    let HTML = '';
+    let HTML = '',
+        images = '',
+        gallery = 0,
+        galleryClass = '',
+        more = '';
+
+    if ( Array.isArray(data.photos) &&
+         data.photos.length > 0 ) {
+        data.photos.forEach( img => {
+            if ( typeof(img) === 'string' &&
+                 img.length >= 5 ) {
+                if ( gallery < 4 ) {
+                    images += `<div class="img" style="background-image: url(./img/${img});"></div>`;
+                }
+                gallery++;
+            }
+        });
+    }
+
+    if ( gallery > 0 ) {
+        galleryClass = 'gallery-'+gallery;
+    }
+    if ( gallery > 4 ) {
+        galleryClass = 'gallery-4';
+        more = `<div class="more">+${gallery - 4}</div>`;
+        images += more;
+    }
 
     HTML = `<div class="content">
                 ${ typeof(data.text) === 'string' ? `<p>${data.text}</p>` : '' }
-                NUOTRAUKOS
+                ${ images === '' ? '' : `<div class="gallery ${galleryClass}">${images}</div>` }
             </div>`;
 
     return HTML;

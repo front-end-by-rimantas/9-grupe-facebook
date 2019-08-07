@@ -113,6 +113,21 @@ const posts = [
         },
         time: 1540030365658,
         content: {
+            text: 'Lorem, ipsum',
+            photos: ['car-racing.png', 'portfolio.png', 'sign-up.png', 'serlokas.png', 'coming-soon.png', 'zalia-mergaite.png']
+        },
+        interactions: {
+            comment_ids: [15165, 8416]
+        }
+    },
+    {
+        author: {
+            id: 65131,
+            photo: 'person.jpg',
+            name: 'Name Surname'
+        },
+        time: 1540030365658,
+        content: {
             text: 'Lorem, ipsum dolor sit amet'
         }
     },
